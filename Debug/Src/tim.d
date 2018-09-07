@@ -31,8 +31,7 @@ Src/tim.o: ../Src/tim.c /Users/kanako/Desktop/Mice/first/first/Inc/tim.h \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
- /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
- /Users/kanako/Desktop/Mice/first/first/Inc/gpio.h
+ /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h
 
 /Users/kanako/Desktop/Mice/first/first/Inc/tim.h:
 
@@ -101,5 +100,3 @@ Src/tim.o: ../Src/tim.c /Users/kanako/Desktop/Mice/first/first/Inc/tim.h \
 /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h:
 
 /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
-
-/Users/kanako/Desktop/Mice/first/first/Inc/gpio.h:

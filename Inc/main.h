@@ -68,6 +68,11 @@
 /* #define USE_FULL_ASSERT    1U */
 
 /* USER CODE BEGIN Private defines */
+typedef struct {
+	float dis;
+	float vel;
+	float acc;
+} tarparameter;
 
 /* USER CODE END Private defines */
 

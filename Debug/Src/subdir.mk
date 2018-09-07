@@ -6,10 +6,12 @@
 C_SRCS += \
 ../Src/adc.c \
 ../Src/aqm1248a.c \
+../Src/dma.c \
 ../Src/font.c \
 ../Src/gpio.c \
 ../Src/main.c \
 ../Src/mode.c \
+../Src/modeselect.c \
 ../Src/myassign.c \
 ../Src/spi.c \
 ../Src/stm32f3xx_hal_msp.c \
@@ -22,10 +24,12 @@ C_SRCS += \
 OBJS += \
 ./Src/adc.o \
 ./Src/aqm1248a.o \
+./Src/dma.o \
 ./Src/font.o \
 ./Src/gpio.o \
 ./Src/main.o \
 ./Src/mode.o \
+./Src/modeselect.o \
 ./Src/myassign.o \
 ./Src/spi.o \
 ./Src/stm32f3xx_hal_msp.o \
@@ -38,10 +42,12 @@ OBJS += \
 C_DEPS += \
 ./Src/adc.d \
 ./Src/aqm1248a.d \
+./Src/dma.d \
 ./Src/font.d \
 ./Src/gpio.d \
 ./Src/main.d \
 ./Src/mode.d \
+./Src/modeselect.d \
 ./Src/myassign.d \
 ./Src/spi.d \
 ./Src/stm32f3xx_hal_msp.d \

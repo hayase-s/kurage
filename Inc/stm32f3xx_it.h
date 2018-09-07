@@ -48,6 +48,11 @@
 /* Exported functions ------------------------------------------------------- */
 
 void SysTick_Handler(void);
+void DMA1_Channel1_IRQHandler(void);
+void TIM1_CC_IRQHandler(void);
+void TIM2_IRQHandler(void);
+void TIM3_IRQHandler(void);
+void TIM6_DAC1_IRQHandler(void);
 
 #ifdef __cplusplus
 }

@@ -34,6 +34,7 @@ Src/main.o: ../Src/main.c \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
  /Users/kanako/Desktop/Mice/first/first/Inc/adc.h \
+ /Users/kanako/Desktop/Mice/first/first/Inc/dma.h \
  /Users/kanako/Desktop/Mice/first/first/Inc/spi.h \
  /Users/kanako/Desktop/Mice/first/first/Inc/tim.h \
  /Users/kanako/Desktop/Mice/first/first/Inc/usart.h \
@@ -41,7 +42,8 @@ Src/main.o: ../Src/main.c \
  /Users/kanako/Desktop/Mice/first/first/Inc/myassign.h \
  /Users/kanako/Desktop/Mice/first/first/Inc/aqm1248a.h \
  /Users/kanako/Desktop/Mice/first/first/Inc/myassign.h \
- /Users/kanako/Desktop/Mice/first/first/Inc/font.h
+ /Users/kanako/Desktop/Mice/first/first/Inc/font.h \
+ /Users/kanako/Desktop/Mice/first/first/Inc/stm32f3xx_it.h
 
 /Users/kanako/Desktop/Mice/first/first/Inc/main.h:
 
@@ -113,6 +115,8 @@ Src/main.o: ../Src/main.c \
 
 /Users/kanako/Desktop/Mice/first/first/Inc/adc.h:
 
+/Users/kanako/Desktop/Mice/first/first/Inc/dma.h:
+
 /Users/kanako/Desktop/Mice/first/first/Inc/spi.h:
 
 /Users/kanako/Desktop/Mice/first/first/Inc/tim.h:
@@ -128,3 +132,5 @@ Src/main.o: ../Src/main.c \
 /Users/kanako/Desktop/Mice/first/first/Inc/myassign.h:
 
 /Users/kanako/Desktop/Mice/first/first/Inc/font.h:
+
+/Users/kanako/Desktop/Mice/first/first/Inc/stm32f3xx_it.h:

@@ -194,35 +194,6 @@ void printfLCD(uint8_t row, uint8_t column, uint8_t contrast, const char* fmt,
 
 }
 
-void drawGraph(void) {
-	uint8_t pageAddress, columnAddress;
-
-	for (pageAddress = 0; pageAddress < 6; pageAddress++) {
-		spiWriteAQM1248A((0xB0 | pageAddress), RS_OFF);
-		spiWriteAQM1248A(0x10, RS_OFF);
-		spiWriteAQM1248A(0x00, RS_OFF);
-		for (columnAddress = 0; columnAddress < 128; columnAddress++) {
-			spiWriteAQM1248A(g_Graph[pageAddress][columnAddress], RS_ON);
-		}
-	}
-}
-
-void drawGraphAndString(void) {
-	uint8_t pageAddress, columnAddress;
-
-	for (pageAddress = 0; pageAddress < 6; pageAddress++) {
-		spiWriteAQM1248A((0xB0 | pageAddress), RS_OFF);
-		spiWriteAQM1248A(0x10, RS_OFF);
-		spiWriteAQM1248A(0x00, RS_OFF);
-		for (columnAddress = 0; columnAddress < 128; columnAddress++) {
-			spiWriteAQM1248A(g_Maki[pageAddress][columnAddress], RS_ON);
-		}
-	}
-	printfLCD(0, 5, WHITE, "Maki");
-	printfLCD(1, 6, WHITE, "NISHI");
-	printfLCD(2, 7, WHITE, "KINO");
-}
-
 void drawcat(void) {
 	uint8_t pageAddress, columnAddress;
 
@@ -238,5 +209,7 @@ void drawcat(void) {
 	printfLCD(1, 6, WHITE, "NYA");
 
 }
+
+
 
 

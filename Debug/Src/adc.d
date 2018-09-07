@@ -32,7 +32,8 @@ Src/adc.o: ../Src/adc.c /Users/kanako/Desktop/Mice/first/first/Inc/adc.h \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
- /Users/kanako/Desktop/Mice/first/first/Inc/gpio.h
+ /Users/kanako/Desktop/Mice/first/first/Inc/gpio.h \
+ /Users/kanako/Desktop/Mice/first/first/Inc/dma.h
 
 /Users/kanako/Desktop/Mice/first/first/Inc/adc.h:
 
@@ -103,3 +104,5 @@ Src/adc.o: ../Src/adc.c /Users/kanako/Desktop/Mice/first/first/Inc/adc.h \
 /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
 
 /Users/kanako/Desktop/Mice/first/first/Inc/gpio.h:
+
+/Users/kanako/Desktop/Mice/first/first/Inc/dma.h:
