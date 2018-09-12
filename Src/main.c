@@ -149,6 +149,7 @@ int main(void)
 	float x;
 	float x_acc;
 	float x_dec;
+
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -183,6 +184,8 @@ int main(void)
 //	HAL_UART_Transmit(&huart2, (uint8_t *) buf, sizeof(buf), 0xFFFF);
 //	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2); //buzzer
 	HAL_TIM_Base_Start_IT(&htim6); //timer
+	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,HIGH);
+
 
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
 	HAL_Delay(3);

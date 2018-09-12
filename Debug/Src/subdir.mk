@@ -4,14 +4,18 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/AD.c \
+../Src/Traacceleration.c \
 ../Src/adc.c \
 ../Src/aqm1248a.c \
+../Src/buzzer.c \
 ../Src/dma.c \
 ../Src/font.c \
 ../Src/gpio.c \
 ../Src/main.c \
 ../Src/mode.c \
 ../Src/modeselect.c \
+../Src/motor.c \
 ../Src/myassign.c \
 ../Src/spi.c \
 ../Src/stm32f3xx_hal_msp.c \
@@ -22,14 +26,18 @@ C_SRCS += \
 ../Src/usart.c 
 
 OBJS += \
+./Src/AD.o \
+./Src/Traacceleration.o \
 ./Src/adc.o \
 ./Src/aqm1248a.o \
+./Src/buzzer.o \
 ./Src/dma.o \
 ./Src/font.o \
 ./Src/gpio.o \
 ./Src/main.o \
 ./Src/mode.o \
 ./Src/modeselect.o \
+./Src/motor.o \
 ./Src/myassign.o \
 ./Src/spi.o \
 ./Src/stm32f3xx_hal_msp.o \
@@ -40,14 +48,18 @@ OBJS += \
 ./Src/usart.o 
 
 C_DEPS += \
+./Src/AD.d \
+./Src/Traacceleration.d \
 ./Src/adc.d \
 ./Src/aqm1248a.d \
+./Src/buzzer.d \
 ./Src/dma.d \
 ./Src/font.d \
 ./Src/gpio.d \
 ./Src/main.d \
 ./Src/mode.d \
 ./Src/modeselect.d \
+./Src/motor.d \
 ./Src/myassign.d \
 ./Src/spi.d \
 ./Src/stm32f3xx_hal_msp.d \
