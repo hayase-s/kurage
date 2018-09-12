@@ -8,11 +8,11 @@
 #ifndef MOTOR_H_
 #define MOTOR_H_
 
-//typedef struct {
-//	float dis;
-//	float vel;
-//	float acc;
-//} tarparameter;
+typedef struct {
+	float dis;
+	float vel;
+	float acc;
+} tarparameter;
 
 extern tarparameter g_targetTrans;
 

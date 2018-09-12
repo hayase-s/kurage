@@ -32,7 +32,8 @@ Src/stm32f3xx_it.o: ../Src/stm32f3xx_it.c \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
- /Users/kanako/Desktop/Mice/first/first/Inc/stm32f3xx_it.h
+ /Users/kanako/Desktop/Mice/first/first/Inc/stm32f3xx_it.h \
+ /Users/kanako/Desktop/Mice/first/first/Inc/motor.h
 
 /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:
 
@@ -101,3 +102,5 @@ Src/stm32f3xx_it.o: ../Src/stm32f3xx_it.c \
 /Users/kanako/Desktop/Mice/first/first/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
 
 /Users/kanako/Desktop/Mice/first/first/Inc/stm32f3xx_it.h:
+
+/Users/kanako/Desktop/Mice/first/first/Inc/motor.h:

@@ -43,7 +43,8 @@ Src/main.o: ../Src/main.c \
  /Users/kanako/Desktop/Mice/first/first/Inc/aqm1248a.h \
  /Users/kanako/Desktop/Mice/first/first/Inc/myassign.h \
  /Users/kanako/Desktop/Mice/first/first/Inc/font.h \
- /Users/kanako/Desktop/Mice/first/first/Inc/stm32f3xx_it.h
+ /Users/kanako/Desktop/Mice/first/first/Inc/motor.h \
+ /Users/kanako/Desktop/Mice/first/first/Inc/AD.h
 
 /Users/kanako/Desktop/Mice/first/first/Inc/main.h:
 
@@ -133,4 +134,6 @@ Src/main.o: ../Src/main.c \
 
 /Users/kanako/Desktop/Mice/first/first/Inc/font.h:
 
-/Users/kanako/Desktop/Mice/first/first/Inc/stm32f3xx_it.h:
+/Users/kanako/Desktop/Mice/first/first/Inc/motor.h:
+
+/Users/kanako/Desktop/Mice/first/first/Inc/AD.h:

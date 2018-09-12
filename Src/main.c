@@ -50,8 +50,11 @@
 #include "myassign.h"
 #include "aqm1248a.h"
 #include "font.h"
-#include "stm32f3xx_it.h"
-#include "math.h"
+#include <math.h>
+#include "motor.h"
+#include "AD.h"
+
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -89,48 +92,6 @@ void SystemClock_Config(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-volatile uint32_t g_timCount;
-void wait_ms(uint32_t waitTime) {
-	g_timCount = 0;
-	__HAL_TIM_SET_COUNTER(&htim6, 0);
-	while (g_timCount < waitTime) {
-	}
-}
-tarparameter g_targetTrans;
-uint16_t calPWMCount(float vel) {
-	uint16_t PWMCount;
-	if ((fabs(g_targetTrans.vel) > 0.0)
-			&& (94247.77961 / fabs(g_targetTrans.vel) * 52 < UINT16_MAX)) {
-		PWMCount = (uint16_t) (94247.77961 / fabs(g_targetTrans.vel) * 52) - 1;
-	} else {
-		PWMCount = UINT16_MAX - 1;
-	}
-	return PWMCount;
-}
-
-void rightCWCCW(float vel) {
-	if (fabs(g_targetTrans.vel) > 0.0) {
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, LOW);
-	} else {
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, HIGH);
-	}
-}
-
-void leftCWCCW(float vel) {
-	if (fabs(g_targetTrans.vel) > 0.0) {
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, LOW);
-	} else {
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, HIGH);
-	}
-
-}
-
-const float DT = 0.001;
-
-void calPara(tarparameter *para) {
-	para->dis += para->vel * DT + para->acc * DT * DT / 2.0;
-	para->vel += para->acc * DT;
-}
 
 /* USER CODE END 0 */
 
@@ -142,14 +103,6 @@ void calPara(tarparameter *para) {
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	float a;
-	float v_start;
-	float v_max;
-	float v_end;
-	float x;
-	float x_acc;
-	float x_dec;
-
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -165,7 +118,6 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -179,74 +131,17 @@ int main(void)
   MX_TIM6_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-	setbuf(stdout, NULL);
 	initAQM1248A();
-//	HAL_UART_Transmit(&huart2, (uint8_t *) buf, sizeof(buf), 0xFFFF);
-//	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2); //buzzer
-	HAL_TIM_Base_Start_IT(&htim6); //timer
-	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,HIGH);
 
-
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
-	HAL_Delay(3);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
-
-	float batf;
-	uint16_t bat;
-	HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
-	HAL_ADC_Start(&hadc1);
-	HAL_ADC_PollForConversion(&hadc1, 100);
-	bat = HAL_ADC_GetValue(&hadc1);
-	HAL_ADC_Stop(&hadc1);
-	batf = 3.3 * (float) bat / 1023.0 * (100.0 + 22.0) / 22.0;
-	printfLCD(0, 0, WHITE, "battery=");
-	printfLCD(1, 2, WHITE, "%f\n\r", batf);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, 0);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, HIGH);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-	a = 100;
-	v_start = 200.0;
-	v_max = 450.0;
-	v_end = 250;
-	x = 1500;
-	x_acc = (v_max * v_max - v_start * v_start) / (2 * a);
-	x_dec = (v_max * v_max - v_end * v_end) / (2 * a);
-
-	if ((x_acc + x_dec) > x) {
-		x_acc = x / 2 + (v_end * v_end - v_start * v_start) / (4 * a);
-		x_dec = x / 2 + (v_start * v_start - v_end * v_end) / (4 * a);
-	}
-
-	g_targetTrans.acc = a;
-	g_targetTrans.vel = v_start;
-	while (g_targetTrans.dis < x_acc) {
-		printf("%f\n\r", g_targetTrans.vel);
-	}
-	g_targetTrans.acc = 0;
-	g_targetTrans.vel = v_max;
-	while (g_targetTrans.dis < (x - x_dec)) {
-		printf("%f\n\r", g_targetTrans.vel);
-	}
-	g_targetTrans.acc = -a;
-	g_targetTrans.vel = v_max;
-	while (g_targetTrans.dis < x) {
-		printf("%f\n\r", g_targetTrans.vel);
-	}
-	g_targetTrans.acc = 0;
-	g_targetTrans.vel = v_end;
-	while (g_targetTrans.dis > x) {
-		printf("%f\n\r", g_targetTrans.vel);
-	}
-
   /* USER CODE END 3 */
 
 }

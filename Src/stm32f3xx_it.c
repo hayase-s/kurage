@@ -34,11 +34,11 @@
 #include "stm32f3xx_hal.h"
 #include "stm32f3xx.h"
 #include "stm32f3xx_it.h"
+#include "motor.h"
 
 /* USER CODE BEGIN 0 */
 extern volatile uint32_t g_timCount;
 extern tarparameter g_targetTrans;
-
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -98,10 +98,10 @@ void TIM1_CC_IRQHandler(void)
   /* USER CODE END TIM1_CC_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
   /* USER CODE BEGIN TIM1_CC_IRQn 1 */
-	calPara(&g_targetTrans);
 	leftCount = calPWMCount(g_targetTrans.vel);
-	__HAL_TIM_SET_COUNTER(&htim1, leftCount);
-	rightCWCCW(g_targetTrans.vel);
+	__HAL_TIM_SET_AUTORELOAD(&htim1, leftCount);
+    __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_1,leftCount/2);
+	leftCWCCW(g_targetTrans.vel);
   /* USER CODE END TIM1_CC_IRQn 1 */
 }
 
@@ -117,7 +117,8 @@ void TIM2_IRQHandler(void)
   /* USER CODE BEGIN TIM2_IRQn 1 */
 	calPara(&g_targetTrans);
 	rightCount = calPWMCount(g_targetTrans.vel);
-	__HAL_TIM_SET_COUNTER(&htim2, rightCount);
+	__HAL_TIM_SET_AUTORELOAD(&htim2, rightCount);
+    __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,rightCount/2);
 	rightCWCCW(g_targetTrans.vel);
   /* USER CODE END TIM2_IRQn 1 */
 }

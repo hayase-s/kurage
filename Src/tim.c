@@ -418,6 +418,13 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 
 /* USER CODE BEGIN 1 */
 
+volatile uint32_t g_timCount;
+void wait_ms(uint32_t waitTime) {
+	g_timCount = 0;
+	__HAL_TIM_SET_COUNTER(&htim6, 0);
+	while (g_timCount < waitTime) {
+	}
+}
 /* USER CODE END 1 */
 
 /**
