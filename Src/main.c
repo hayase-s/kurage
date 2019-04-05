@@ -10,7 +10,7 @@
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
-  * COPYRIGHT(c) 2018 STMicroelectronics
+  * COPYRIGHT(c) 2019 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -47,9 +47,7 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
-#include "myassign.h"
 #include "aqm1248a.h"
-#include "font.h"
 #include <math.h>
 #include "motor.h"
 #include "AD.h"
@@ -118,6 +116,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -132,8 +131,17 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	initAQM1248A();
+	drawcat();
+//	wait_ms();
 
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, HIGH);
+//	while(1){
+//		if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_0)==HIGH){
+//			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,HIGH);
+//		}else{
+//			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,LOW);
+//		}
+//	}
+
 
   /* USER CODE END 2 */
 

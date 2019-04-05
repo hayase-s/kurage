@@ -9,7 +9,6 @@
 #include "spi.h"
 #include "gpio.h"
 
-#include "myassign.h"
 
 #include "aqm1248a.h"
 #include "font.h"

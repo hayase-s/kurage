@@ -1,4 +1,3 @@
-Src/font.o: ../Src/font.c \
- /Users/kanako/Desktop/Mice/first/first/Inc/font.h
+Src/font.o: ../Src/font.c /Users/kanako/git/kurage/Inc/font.h
 
-/Users/kanako/Desktop/Mice/first/first/Inc/font.h:
+/Users/kanako/git/kurage/Inc/font.h:

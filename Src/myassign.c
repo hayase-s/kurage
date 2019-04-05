@@ -12,7 +12,7 @@
 
 //Output
 void lcdRS(uint8_t onOff) {
-	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_1, onOff);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, onOff);
 }
 void lcdCS(uint8_t onOff) {
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, onOff);
