@@ -52,6 +52,7 @@
 #include <time.h>
 #include <sys/time.h>
 #include <sys/times.h>
+#include "usart.h"
 
 
 /* Variables */
@@ -100,16 +101,19 @@ int _read (int file, char *ptr, int len)
 return len;
 }
 
-int _write(int file, char *ptr, int len)
-{
-	int DataIdx;
+int _write(int32_t file, uint8_t *ptr, int32_t len) {
+        /* Implement your write code here,
+        this is used by puts and printf for example */
+        /* return len; */
 
-	for (DataIdx = 0; DataIdx < len; DataIdx++)
-	{
-		__io_putchar(*ptr++);
-	}
-	return len;
+        int DataIdx;
+
+        for (DataIdx = 0; DataIdx < len; DataIdx++) {
+                HAL_UART_Transmit(&huart2, ptr++, 1, 1);
+        }
+        return len;
 }
+
 
 caddr_t _sbrk(int incr)
 {

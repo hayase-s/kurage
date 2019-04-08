@@ -53,6 +53,7 @@
 #include "AD.h"
 
 
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -133,13 +134,16 @@ int main(void)
 	initAQM1248A();
 	HAL_TIM_Base_Start_IT(&htim6);
 	drawcat();
+    printf("M_PI=%f\n\r", M_PI);
 
-	while(1){
 
-		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_3);
-		wait_ms(500);
 
-	}
+//	while(1){
+//
+//		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_3);
+//		wait_ms(500);
+//
+//	}
 
 //	while(1){
 //		if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_0)==HIGH){
