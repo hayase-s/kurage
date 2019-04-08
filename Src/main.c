@@ -131,8 +131,15 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	initAQM1248A();
+	HAL_TIM_Base_Start_IT(&htim6);
 	drawcat();
-//	wait_ms();
+
+	while(1){
+
+		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_3);
+		wait_ms(500);
+
+	}
 
 //	while(1){
 //		if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_0)==HIGH){
