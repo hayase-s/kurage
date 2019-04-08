@@ -57,12 +57,28 @@
 #define LCD_RS_GPIO_Port GPIOA
 #define LCD__CS_Pin GPIO_PIN_6
 #define LCD__CS_GPIO_Port GPIOA
+#define swich1_Pin GPIO_PIN_0
+#define swich1_GPIO_Port GPIOB
+#define R_motot_Pin GPIO_PIN_8
+#define R_motot_GPIO_Port GPIOA
+#define L_motor_Pin GPIO_PIN_9
+#define L_motor_GPIO_Port GPIOA
+#define R_CW_CCW_Pin GPIO_PIN_10
+#define R_CW_CCW_GPIO_Port GPIOA
+#define L_CW_CCW_Pin GPIO_PIN_11
+#define L_CW_CCW_GPIO_Port GPIOA
+#define swich0_Pin GPIO_PIN_12
+#define swich0_GPIO_Port GPIOA
 #define SWDIO_Pin GPIO_PIN_13
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
 #define VCP_RX_Pin GPIO_PIN_15
 #define VCP_RX_GPIO_Port GPIOA
+#define motor_enable_Pin GPIO_PIN_6
+#define motor_enable_GPIO_Port GPIOB
+#define motor_reset_Pin GPIO_PIN_7
+#define motor_reset_GPIO_Port GPIOB
 
 /* ########################## Assert Selection ############################## */
 /**

@@ -10,8 +10,6 @@
 #include "myassign.h"
 #include "motor.h"
 
-
-
 tarparameter g_targetTrans;
 
 uint16_t calPWMCount(float vel) {
@@ -23,7 +21,7 @@ uint16_t calPWMCount(float vel) {
 		PWMCount = UINT16_MAX - 1;
 	}
 	return PWMCount;
-}
+}//SOKUDO
 
 void rightCWCCW(float vel) {
 	if (fabs(g_targetTrans.vel) > 0.0) {
@@ -47,3 +45,10 @@ void calPara(tarparameter *para) {
 	para->dis += para->vel * DT + para->acc * DT * DT / 2.0;
 	para->vel += para->acc * DT;
 }//SEKIBUNKANSUU
+
+void motor_enable(){
+	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,HIGH);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
+	HAL_Delay(3);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
+}

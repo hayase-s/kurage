@@ -51,9 +51,7 @@
 #include <math.h>
 #include "motor.h"
 #include "AD.h"
-
-
-
+//extern tarparameter g_targetTrans;
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -133,27 +131,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	initAQM1248A();
 	HAL_TIM_Base_Start_IT(&htim6);
-	drawcat();
-    printf("M_PI=%f\n\r", M_PI);
-
-
-
-//	while(1){
-//
-//		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_3);
-//		wait_ms(500);
-//
-//	}
-
-//	while(1){
-//		if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_0)==HIGH){
-//			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,HIGH);
-//		}else{
-//			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,LOW);
-//		}
-//	}
-
-
+	HAL_TIM_Base_Start_IT(&htim1);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_Base_Start_IT(&htim2);
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -161,6 +142,15 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+
+	AD_bat();
+	motor_enable();
+
+	g_targetTrans.vel=3000;
+
+	while (1) {
+	}
+
   /* USER CODE END 3 */
 
 }
