@@ -9,8 +9,8 @@
 #include "aqm1248a.h"
 #include "adc.h"
 
-	float batf;
-void AD_bat(void){
+float batf;
+void AD_bat(void) {
 
 	uint16_t bat;
 	HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);

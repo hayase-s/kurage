@@ -6,8 +6,8 @@
  */
 #include <stdint.h>
 #include <math.h>
-#include "gpio.h"
 #include "myassign.h"
+#include "gpio.h"
 #include "motor.h"
 
 tarparameter g_targetTrans;
@@ -15,8 +15,8 @@ tarparameter g_targetTrans;
 uint16_t calPWMCount(float vel) {
 	uint16_t PWMCount;
 	if ((fabs(g_targetTrans.vel) > 0.0)
-			&& (94247.77961 / fabs(g_targetTrans.vel) * 52 < UINT16_MAX)) {
-		PWMCount = (uint16_t) (94247.77961 / fabs(g_targetTrans.vel) * 52) - 1;
+			&& (6534512.719 / fabs(g_targetTrans.vel) < UINT16_MAX)) {
+		PWMCount = (uint16_t) (6534512.719 / fabs(g_targetTrans.vel) ) - 1;
 	} else {
 		PWMCount = UINT16_MAX - 1;
 	}
