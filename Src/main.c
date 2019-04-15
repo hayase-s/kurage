@@ -146,19 +146,15 @@ int main(void)
   /* USER CODE BEGIN 3 */
 
 	AD_bat();
-	motor_enable();
-	g_targetTrans.vel = 1000;
-//	printf("%ld\n\r", htim1.Init.Period);
-//	printf("%ld\n\r", htim2.Init.Period);
-//	HAL_Delay(100);
-//	printf("%d\n\r", calPWMCount(g_targetTrans.vel));
-//	printf("%ld\n\r", htim1.Init.Period);
-//	printf("%ld\n\r", htim2.Init.Period);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, HIGH);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, LOW);
+//	g_targetTrans.vel = 1000;
+	Traacc();
 
 	while (1) {
 
-		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_3);
-		wait_ms(1000);
+//		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_3);
+//		wait_ms(1000);
 
 	}
 

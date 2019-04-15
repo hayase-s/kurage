@@ -39,6 +39,7 @@
 #include "motor.h"
 extern volatile uint32_t g_timCount;
 extern tarparameter g_targetTrans;
+extern int s;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -117,12 +118,12 @@ void TIM1_CC_IRQHandler(void)
   /* USER CODE END TIM1_CC_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
   /* USER CODE BEGIN TIM1_CC_IRQn 1 */
-	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
-	rightCount = calPWMCount(g_targetTrans.vel);
-	__HAL_TIM_SET_AUTORELOAD(&htim1, rightCount);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, rightCount / 2);
-	rightCWCCW(g_targetTrans.vel);
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+//	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+//	rightCount = calPWMCount(g_targetTrans.vel);
+//	__HAL_TIM_SET_AUTORELOAD(&htim1, rightCount);
+//	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, rightCount / 2);
+//	rightCWCCW(g_targetTrans.vel);
+//	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   /* USER CODE END TIM1_CC_IRQn 1 */
 }
 
@@ -136,13 +137,13 @@ void TIM2_IRQHandler(void)
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */
-	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3);
 	leftCount = calPWMCount(g_targetTrans.vel);
 	__HAL_TIM_SET_AUTORELOAD(&htim2, leftCount);
 	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, leftCount / 2);
 	leftCWCCW(g_targetTrans.vel);
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-  /* USER CODE END TIM2_IRQn 1 */
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+   /* USER CODE END TIM2_IRQn 1 */
 }
 
 /**
@@ -170,7 +171,9 @@ void TIM6_DAC1_IRQHandler(void)
   HAL_TIM_IRQHandler(&htim6);
   /* USER CODE BEGIN TIM6_DAC1_IRQn 1 */
 	g_timCount++;
-
+	if(s==1){
+		calPara(&g_targetTrans);
+	}
   /* USER CODE END TIM6_DAC1_IRQn 1 */
 }
 
