@@ -59,6 +59,8 @@
 #define LCD__CS_GPIO_Port GPIOA
 #define swich1_Pin GPIO_PIN_0
 #define swich1_GPIO_Port GPIOB
+#define BAT_Pin GPIO_PIN_1
+#define BAT_GPIO_Port GPIOB
 #define R_motot_Pin GPIO_PIN_8
 #define R_motot_GPIO_Port GPIOA
 #define L_motor_Pin GPIO_PIN_9

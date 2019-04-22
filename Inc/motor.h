@@ -10,7 +10,8 @@
 
 typedef struct {
 	float dis;
-	float vel;
+	float vel_r;
+	float vel_l;
 	float acc;
 } tarparameter;
 

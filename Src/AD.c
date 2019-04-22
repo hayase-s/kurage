@@ -22,3 +22,11 @@ void AD_bat(void) {
 	printfLCD(0, 0, WHITE, "battery=");
 	printfLCD(1, 2, WHITE, "%f\n\r", batf);
 }
+
+uint16_t g_ADCBuffer[4];
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
+	HAL_ADC_Stop_DMA(&hadc1);
+	printf("%4d,%4d,%4d\n", g_ADCBuffer[1], g_ADCBuffer[2], g_ADCBuffer[3]);
+	HAL_ADC_Start_DMA(&hadc1, g_ADCBuffer,
+			sizeof(g_ADCBuffer) / sizeof(uint16_t));
+}
