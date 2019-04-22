@@ -54,12 +54,10 @@ const float DT = 0.001;
 
 void rightcalPara(tarparameter *para) {
 	para->dis += para->vel_r * DT + para->acc * DT * DT / 2.0;
-	para->vel_r += para->acc * DT;
 }//SEKIBUNKANSUU_MIGI
 
 void leftcalPara(tarparameter *para) {
 	para->dis += para->vel_l * DT + para->acc * DT * DT / 2.0;
-	para->vel_l += para->acc * DT;
 }//SEKIBUNKANSUU_HIDARI
 
 void motor_enable(){

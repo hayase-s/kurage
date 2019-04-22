@@ -146,8 +146,10 @@ int main(void) {
 
 	AD_bat();
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, HIGH);
-//	Traacc();
-	turn();
+	Traacc();
+
+//	g_targetTrans.vel_r = 1000;
+//	g_targetTrans.vel_l = 1000;
 
 
 

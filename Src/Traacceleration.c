@@ -17,6 +17,7 @@ float x;
 float x_acc;
 float x_dec;
 int Tra;
+
 void Traacc(void) {
 
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
@@ -26,15 +27,17 @@ void Traacc(void) {
 	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3);
 
-	g_targetTrans.dis = 0;
-	Tra = 1;
 	a = 1000;
-	v_start = 500.0;
+	v_start = 100.0;
 	v_max = 1000.0;
-	v_end = 500;
-	x = 1500;
+	v_end = 100;
+	x = 3000;
+	g_targetTrans.dis = 0;
+	g_targetTrans.acc = a;
+
 	x_acc = (v_max * v_max - v_start * v_start) / (2 * a);
 	x_dec = (v_max * v_max - v_end * v_end) / (2 * a);
+
 	printf("x_acc=%f  x_dec=%f\n\r", x_acc, x_dec);
 
 	if ((x_acc + x_dec) > x) {
@@ -42,35 +45,20 @@ void Traacc(void) {
 		x_dec = x / 2 + (v_start * v_start - v_end * v_end) / (4 * a);
 	}
 
-	g_targetTrans.acc = a;
+	HAL_TIM_PWM_Start_IT(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start_IT(&htim2, TIM_CHANNEL_3);
+
 	g_targetTrans.vel_r = v_start;
 	g_targetTrans.vel_l = v_start;
-	while (g_targetTrans.dis < x_acc) {
-		HAL_TIM_PWM_Start_IT(&htim1, TIM_CHANNEL_1);
-		HAL_TIM_PWM_Start_IT(&htim2, TIM_CHANNEL_3);
 
-		rightcalPWMCount(g_targetTrans.vel_r);
-		leftcalPWMCount(g_targetTrans.vel_l);
-	}
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, HIGH);
-	g_targetTrans.acc = 0;
-	g_targetTrans.vel_r = v_max;
-	g_targetTrans.vel_l = v_max;
-	while (g_targetTrans.dis < (x - x_dec)) {
-
-		rightcalPWMCount(g_targetTrans.vel_r);
-		leftcalPWMCount(g_targetTrans.vel_l);
-
-	}
-	g_targetTrans.acc = -a;
-	g_targetTrans.vel_r = v_max;
-	g_targetTrans.vel_l = v_max;
+	Tra = 1;
 	while (g_targetTrans.dis < x) {
-
 		rightcalPWMCount(g_targetTrans.vel_r);
 		leftcalPWMCount(g_targetTrans.vel_l);
-
+//		printf("v_R=%f  v_L=%f\n\r", g_targetTrans.vel_r, g_targetTrans.vel_l);
+//		printf("%f\n\r",g_targetTrans.dis);
 	}
+
 	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3);
 	Tra = 0;
