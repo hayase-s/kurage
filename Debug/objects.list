@@ -39,4 +39,5 @@
 "Src/tim.o"
 "Src/turn.o"
 "Src/usart.o"
+"Src/wall.o"
 "startup/startup_stm32f303x8.o"

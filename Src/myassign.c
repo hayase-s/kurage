@@ -20,3 +20,10 @@ void lcdCS(uint8_t onOff) {
 
 //Input
 
+void sensorFrontLED(uint8_t highlow) {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, highlow);
+}
+
+void sensorSideLED(uint8_t highlow) {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, highlow);
+}

@@ -39,7 +39,8 @@ Src/main.o: ../Src/main.c /Users/kanako/git/kurage/Inc/main.h \
  /Users/kanako/git/kurage/Inc/myassign.h \
  /Users/kanako/git/kurage/Inc/myassign.h \
  /Users/kanako/git/kurage/Inc/motor.h /Users/kanako/git/kurage/Inc/AD.h \
- /Users/kanako/git/kurage/Inc/turn.h
+ /Users/kanako/git/kurage/Inc/wall.h /Users/kanako/git/kurage/Inc/gpio.h \
+ /Users/kanako/git/kurage/Inc/AD.h /Users/kanako/git/kurage/Inc/turn.h
 
 /Users/kanako/git/kurage/Inc/main.h:
 
@@ -128,6 +129,12 @@ Src/main.o: ../Src/main.c /Users/kanako/git/kurage/Inc/main.h \
 /Users/kanako/git/kurage/Inc/myassign.h:
 
 /Users/kanako/git/kurage/Inc/motor.h:
+
+/Users/kanako/git/kurage/Inc/AD.h:
+
+/Users/kanako/git/kurage/Inc/wall.h:
+
+/Users/kanako/git/kurage/Inc/gpio.h:
 
 /Users/kanako/git/kurage/Inc/AD.h:
 

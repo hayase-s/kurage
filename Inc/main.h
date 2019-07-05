@@ -51,8 +51,14 @@
 
 #define MCO_Pin GPIO_PIN_0
 #define MCO_GPIO_Port GPIOF
+#define center_Pin GPIO_PIN_0
+#define center_GPIO_Port GPIOA
+#define right_Pin GPIO_PIN_1
+#define right_GPIO_Port GPIOA
 #define VCP_TX_Pin GPIO_PIN_2
 #define VCP_TX_GPIO_Port GPIOA
+#define left_Pin GPIO_PIN_3
+#define left_GPIO_Port GPIOA
 #define LCD_RS_Pin GPIO_PIN_4
 #define LCD_RS_GPIO_Port GPIOA
 #define LCD__CS_Pin GPIO_PIN_6
@@ -77,6 +83,10 @@
 #define SWCLK_GPIO_Port GPIOA
 #define VCP_RX_Pin GPIO_PIN_15
 #define VCP_RX_GPIO_Port GPIOA
+#define senLED_center_Pin GPIO_PIN_4
+#define senLED_center_GPIO_Port GPIOB
+#define senLED_side_Pin GPIO_PIN_5
+#define senLED_side_GPIO_Port GPIOB
 #define motor_enable_Pin GPIO_PIN_6
 #define motor_enable_GPIO_Port GPIOB
 #define motor_reset_Pin GPIO_PIN_7

@@ -33,7 +33,9 @@ Src/stm32f3xx_it.o: ../Src/stm32f3xx_it.c \
  /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
  /Users/kanako/git/kurage/Inc/stm32f3xx_it.h \
- /Users/kanako/git/kurage/Inc/motor.h
+ /Users/kanako/git/kurage/Inc/motor.h /Users/kanako/git/kurage/Inc/wall.h \
+ /Users/kanako/git/kurage/Inc/gpio.h /Users/kanako/git/kurage/Inc/AD.h \
+ /Users/kanako/git/kurage/Inc/myassign.h
 
 /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:
 
@@ -104,3 +106,11 @@ Src/stm32f3xx_it.o: ../Src/stm32f3xx_it.c \
 /Users/kanako/git/kurage/Inc/stm32f3xx_it.h:
 
 /Users/kanako/git/kurage/Inc/motor.h:
+
+/Users/kanako/git/kurage/Inc/wall.h:
+
+/Users/kanako/git/kurage/Inc/gpio.h:
+
+/Users/kanako/git/kurage/Inc/AD.h:
+
+/Users/kanako/git/kurage/Inc/myassign.h:

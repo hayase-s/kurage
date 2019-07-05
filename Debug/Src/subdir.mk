@@ -24,7 +24,8 @@ C_SRCS += \
 ../Src/system_stm32f3xx.c \
 ../Src/tim.c \
 ../Src/turn.c \
-../Src/usart.c 
+../Src/usart.c \
+../Src/wall.c 
 
 OBJS += \
 ./Src/AD.o \
@@ -47,7 +48,8 @@ OBJS += \
 ./Src/system_stm32f3xx.o \
 ./Src/tim.o \
 ./Src/turn.o \
-./Src/usart.o 
+./Src/usart.o \
+./Src/wall.o 
 
 C_DEPS += \
 ./Src/AD.d \
@@ -70,7 +72,8 @@ C_DEPS += \
 ./Src/system_stm32f3xx.d \
 ./Src/tim.d \
 ./Src/turn.d \
-./Src/usart.d 
+./Src/usart.d \
+./Src/wall.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

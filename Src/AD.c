@@ -8,25 +8,107 @@
 #include "stm32f3xx_hal.h"
 #include "aqm1248a.h"
 #include "adc.h"
-
+#include "AD.h"
+wallsenpara g_offWallSensorValue;
+wallsenpara g_onWallSensorValue;
+wallsenpara g_nowWallSensorValue;
+int g_ADCcount;
+int g_sensorLEDFlag;
 float batf;
-void AD_bat(void) {
-
-	uint16_t bat;
-	HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
-	HAL_ADC_Start(&hadc1);
-	HAL_ADC_PollForConversion(&hadc1, 100);
-	bat = HAL_ADC_GetValue(&hadc1);
-	HAL_ADC_Stop(&hadc1);
-	batf = 3.3 * (float) bat / 1023.0 * (100.0 + 22.0) / 22.0;
-	printfLCD(0, 0, WHITE, "battery=");
-	printfLCD(1, 2, WHITE, "%f\n\r", batf);
-}
 
 uint16_t g_ADCBuffer[4];
+
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
-	HAL_ADC_Stop_DMA(&hadc1);
-	printf("%4d,%4d,%4d\n", g_ADCBuffer[1], g_ADCBuffer[2], g_ADCBuffer[3]);
-	HAL_ADC_Start_DMA(&hadc1, g_ADCBuffer,
-			sizeof(g_ADCBuffer) / sizeof(uint16_t));
+//
+//
+//	printf("%4d,%4d,%4d,%4d\n\r", g_ADCBuffer[0], g_ADCBuffer[1],
+//			g_ADCBuffer[2], g_ADCBuffer[3]);
+//	batf = 3.3 * (g_ADCBuffer[0] / 4095.0) * (100.0 + 22.0) / 22.0;
+//	printf("%f\n\r", batf);
+
+//	[0]=bat
+//	[1]=left
+//	[2]=center
+//	[3]=right
 }
+
+void AD_bat(void) {
+	HAL_Delay(10);
+	batf = 3.3 * (g_ADCBuffer[0] / 4095.0) * (100.0 + 22.0) / 22.0;
+	printfLCD(0, 0, WHITE, "battery");
+	printfLCD(2, 4, WHITE, "%.2f\n\r", batf);
+	printf("%.2f\n\r", batf);
+	volatile int i;
+	i = 0;
+	while (i == 0) {
+		if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == HIGH) {
+		} else {
+			i = 1;
+			HAL_Delay(1);
+		}
+	}
+}
+
+void getWallSensorValue(void) {
+	volatile uint32_t onSENSORLEDWAITCOUNT;
+	volatile uint32_t offSENSORLEDWAITCOUNT;
+	onSENSORLEDWAITCOUNT= 250;
+	offSENSORLEDWAITCOUNT = 250;
+
+
+//消灯時の値を得る
+	g_offWallSensorValue.left = g_ADCBuffer[1];
+	g_offWallSensorValue.right = g_ADCBuffer[3];
+	g_offWallSensorValue.center = g_ADCBuffer[2];
+
+//左右のLEDを点灯
+	if (g_sensorLEDFlag == 1) {
+		sensorSideLED(HIGH);
+		volatile uint16_t i;
+		for (i = 0; i < onSENSORLEDWAITCOUNT; i++) {
+		} //立ち上がり待ち
+	}
+
+//左右方向のセンサの値を得る
+	g_onWallSensorValue.left = g_ADCBuffer[1];
+	g_onWallSensorValue.right = g_ADCBuffer[3];
+
+//左右のLEDを消灯
+	if (g_sensorLEDFlag == 1) {
+		sensorSideLED(LOW);
+		volatile uint16_t i;
+		for (i = 0; i < offSENSORLEDWAITCOUNT; i++) {
+		} //立ち上がり待ち
+	}
+
+//前方向のLEDを点灯
+	if (g_sensorLEDFlag == 1) {
+		sensorFrontLED(HIGH);
+		volatile uint16_t i;
+		for (i = 0; i < onSENSORLEDWAITCOUNT; i++) {
+		} //立ち上がり待ち
+	}
+
+//前方向のセンサの値を得る
+	g_onWallSensorValue.center = g_ADCBuffer[2];
+
+//前方向のLEDを消灯
+	if (g_sensorLEDFlag == 1) {
+		sensorFrontLED(LOW);
+		volatile uint16_t i;
+		for (i = 0; i < offSENSORLEDWAITCOUNT; i++) {
+		} //立ち上がり待ち
+	}
+
+	g_nowWallSensorValue.center = g_onWallSensorValue.center
+			- g_offWallSensorValue.center;
+	g_nowWallSensorValue.left = g_onWallSensorValue.left
+			- g_offWallSensorValue.left;
+	g_nowWallSensorValue.right = g_onWallSensorValue.right
+			- g_offWallSensorValue.right;
+
+	printf("%4d,%4d,%4d\n\r", g_nowWallSensorValue.left,
+			g_nowWallSensorValue.center, g_nowWallSensorValue.right);
+
+}
+

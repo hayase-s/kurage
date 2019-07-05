@@ -74,7 +74,7 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, LCD_RS_Pin|LCD__CS_Pin|R_CW_CCW_Pin|L_CW_CCW_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|motor_enable_Pin 
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3|senLED_center_Pin|senLED_side_Pin|motor_enable_Pin 
                           |motor_reset_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PF1 */
@@ -117,9 +117,9 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(swich0_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PB3 PB4 PB5 PBPin 
+  /*Configure GPIO pins : PB3 PBPin PBPin PBPin 
                            PBPin */
-  GPIO_InitStruct.Pin = GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|motor_enable_Pin 
+  GPIO_InitStruct.Pin = GPIO_PIN_3|senLED_center_Pin|senLED_side_Pin|motor_enable_Pin 
                           |motor_reset_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;

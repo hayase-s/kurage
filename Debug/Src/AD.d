@@ -34,7 +34,7 @@ Src/AD.o: ../Src/AD.c \
  /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
  /Users/kanako/git/kurage/Inc/aqm1248a.h \
  /Users/kanako/git/kurage/Inc/myassign.h \
- /Users/kanako/git/kurage/Inc/adc.h
+ /Users/kanako/git/kurage/Inc/adc.h /Users/kanako/git/kurage/Inc/AD.h
 
 /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:
 
@@ -107,3 +107,5 @@ Src/AD.o: ../Src/AD.c \
 /Users/kanako/git/kurage/Inc/myassign.h:
 
 /Users/kanako/git/kurage/Inc/adc.h:
+
+/Users/kanako/git/kurage/Inc/AD.h:
