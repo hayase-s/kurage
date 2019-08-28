@@ -21,8 +21,8 @@ void KABE(void) {
 	Kp = 0.2;
 	r_threshold = 0;
 	l_threshold = 0;//閾値
-	sen_l.ref = 50;
-	sen_r.ref = 170;//真ん中においた時のセンサの値
+	sen_l.ref = 107;
+	sen_r.ref = 369;//真ん中においた時のセンサの値
 
 	sen_r.value = g_nowWallSensorValue.left;
 	sen_l.value = g_nowWallSensorValue.right;

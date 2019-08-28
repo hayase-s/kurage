@@ -17,10 +17,10 @@ float v;
 float ome;
 float w;
 int tur;
-extern float control;
+
 
 void turn(void) {
-
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, HIGH);
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
 	HAL_Delay(3);
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
@@ -33,8 +33,8 @@ void turn(void) {
 	ome = 20;
 	w = 45;
 
-	v_R = v + ome * (w / 2) + control;
-	v_L = v - ome * (w / 2) + control;
+	v_R = v + ome * (w / 2) ;
+	v_L = v - ome * (w / 2) ;
 
 	printf("R=%f L=%f\n\r", v_R, v_L);
 

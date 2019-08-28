@@ -12,6 +12,7 @@ C_SRCS += \
 ../Src/dma.c \
 ../Src/font.c \
 ../Src/gpio.c \
+../Src/hidarite.c \
 ../Src/main.c \
 ../Src/mode.c \
 ../Src/modeselect.c \
@@ -36,6 +37,7 @@ OBJS += \
 ./Src/dma.o \
 ./Src/font.o \
 ./Src/gpio.o \
+./Src/hidarite.o \
 ./Src/main.o \
 ./Src/mode.o \
 ./Src/modeselect.o \
@@ -60,6 +62,7 @@ C_DEPS += \
 ./Src/dma.d \
 ./Src/font.d \
 ./Src/gpio.d \
+./Src/hidarite.d \
 ./Src/main.d \
 ./Src/mode.d \
 ./Src/modeselect.d \

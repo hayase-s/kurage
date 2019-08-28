@@ -26,6 +26,7 @@
 "Src/dma.o"
 "Src/font.o"
 "Src/gpio.o"
+"Src/hidarite.o"
 "Src/main.o"
 "Src/mode.o"
 "Src/modeselect.o"
