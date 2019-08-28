@@ -195,8 +195,7 @@ void TIM6_DAC1_IRQHandler(void)
 		}
 	}
 	if (tur == 1) {
-		rightcalPara(&g_targetTrans);
-		leftcalPara(&g_targetTrans);
+
 	}
   /* USER CODE END TIM6_DAC1_IRQn 1 */
 }
