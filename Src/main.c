@@ -156,7 +156,7 @@ int main(void) {
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, HIGH);
 
 	Traacc();
-
+	Traacc();
 	while (1) {
 
 	}
