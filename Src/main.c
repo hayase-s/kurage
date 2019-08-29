@@ -153,17 +153,23 @@ int main(void) {
 
 	/* USER CODE BEGIN 3 */
 	g_sensorLEDFlag = 1;
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, HIGH);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, HIGH);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
-	HAL_Delay(3);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
 
-	turn();
-
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, LOW);
+	Traacc();
+////
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, HIGH);
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
+//	HAL_Delay(3);
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
+//
+//	g_targetTrans.wvel_r = 180;
+//	g_targetTrans.wvel_l = 180;
+//	rightcalPWMCount(g_targetTrans.wvel_r);
+//	leftcalPWMCount(g_targetTrans.wvel_l);
+//	wait_ms(3000);
+//	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+//	HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3);
+//	turn();
 	while (1) {
-
 	}
 
 	/* USER CODE END 3 */

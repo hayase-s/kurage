@@ -32,7 +32,7 @@ void Traacc(void) {
 	v_start = 200.0;
 	v_max = 1000.0;
 	v_end = 200;
-	x = 180*2;
+	x = 540;
 	g_targetTrans.dis = 0;
 	g_targetTrans.acc = a;
 
@@ -54,7 +54,7 @@ void Traacc(void) {
 	while (g_targetTrans.dis < x) {
 		rightcalPWMCount(g_targetTrans.wvel_r);
 		leftcalPWMCount(g_targetTrans.wvel_l);
-		printf("%f\n\r",g_targetTrans.dis);
+		printf("%f\n\r", g_targetTrans.dis);
 	}
 
 	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);

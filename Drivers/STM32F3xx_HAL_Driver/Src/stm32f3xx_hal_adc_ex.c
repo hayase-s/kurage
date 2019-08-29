@@ -2336,8 +2336,7 @@ HAL_StatusTypeDef HAL_ADC_Stop_IT(ADC_HandleTypeDef* hadc)
   * @param  Length The length of data to be transferred from ADC peripheral to memory.
   * @retval None
   */
-HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length)
-{
+HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length){
   HAL_StatusTypeDef tmp_hal_status = HAL_OK;
   
   /* Check the parameters */

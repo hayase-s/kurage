@@ -1,5 +1,4 @@
-/*
- * AD.c
+/* * AD.c
  *
  *  Created on: 2018/09/09
  *      Author: kanako
@@ -34,9 +33,19 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 
 void AD_bat(void) {
 	HAL_Delay(10);
-	batf = 3.3 * (g_ADCBuffer[0] / 4095.0) * (100.0 + 22.0) / 22.0;
-	printfLCD(0, 0, WHITE, "battery");
-	printfLCD(2, 4, WHITE, "%.2f\n\r", batf);
+	batf = 1.066 * 3.3 * (g_ADCBuffer[0] / 4095.0) * (100.0 + 22.0) / 22.0;
+
+	if (batf < 11.1) {
+		printfLCD(0, 0, BLACK, "   ERROR!     ");
+		printfLCD(1, 0, WHITE, "battery");
+		printfLCD(2, 3, WHITE, "%.2fV\n\r", batf);
+		while (1) {
+		}
+	} else {
+		printfLCD(0, 0, BLACK, "    OK!    ");
+		printfLCD(1, 0, WHITE, "battery");
+		printfLCD(2, 3, WHITE, "%.2fV\n\r", batf);
+	}
 	printf("%.2f\n\r", batf);
 	volatile int i;
 	i = 0;
@@ -44,7 +53,7 @@ void AD_bat(void) {
 		if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == HIGH) {
 		} else {
 			i = 1;
-			HAL_Delay(1);
+			HAL_Delay(100);
 		}
 	}
 }
@@ -52,9 +61,8 @@ void AD_bat(void) {
 void getWallSensorValue(void) {
 	volatile uint32_t onSENSORLEDWAITCOUNT;
 	volatile uint32_t offSENSORLEDWAITCOUNT;
-	onSENSORLEDWAITCOUNT= 250;
+	onSENSORLEDWAITCOUNT = 250;
 	offSENSORLEDWAITCOUNT = 250;
-
 
 //消灯時の値を得る
 	g_offWallSensorValue.left = g_ADCBuffer[1];
