@@ -154,9 +154,14 @@ int main(void) {
 	/* USER CODE BEGIN 3 */
 	g_sensorLEDFlag = 1;
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, HIGH);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, HIGH);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
+	HAL_Delay(3);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
 
-	Traacc();
-	Traacc();
+	turn();
+
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, LOW);
 	while (1) {
 
 	}
