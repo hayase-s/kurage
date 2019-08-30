@@ -38,14 +38,10 @@
 /* USER CODE BEGIN 0 */
 #include "motor.h"
 #include "wall.h"
+#include "Traacceleration.h"
 extern volatile uint32_t g_timCount;
 extern tarparameter g_targetTrans;
-extern int Tra;
-extern int tur;
-extern float a;
-extern float x;
-extern float x_acc;
-extern float x_dec;
+
 
 /* USER CODE END 0 */
 
@@ -176,7 +172,7 @@ void TIM6_DAC1_IRQHandler(void) {
 			g_targetTrans.vel_l += a * 0.001;
 			g_targetTrans.wvel_r = g_targetTrans.vel_r + control;
 			g_targetTrans.wvel_l = g_targetTrans.vel_l + control;
-		} else if (g_targetTrans.dis < (x - x_dec)) {
+		} else if (g_targetTrans.dis < (g_x - x_dec)) {
 			g_targetTrans.vel_r += 0 * 0.001;
 			g_targetTrans.vel_l += 0 * 0.001;
 			g_targetTrans.wvel_r = g_targetTrans.vel_r + control;

@@ -14,6 +14,7 @@ enum ONOFF {
 
 void lcdRS(uint8_t onOff);
 void lcdCS(uint8_t onOff);
-
+void sensorFrontLED(uint8_t highlow);
+void sensorSideLED(uint8_t highlow);
 
 #endif /* MYASSIGN_H_ */

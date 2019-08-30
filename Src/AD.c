@@ -18,8 +18,6 @@ float batf;
 uint16_t g_ADCBuffer[4];
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
-//
-//
 //	printf("%4d,%4d,%4d,%4d\n\r", g_ADCBuffer[0], g_ADCBuffer[1],
 //			g_ADCBuffer[2], g_ADCBuffer[3]);
 //	batf = 3.3 * (g_ADCBuffer[0] / 4095.0) * (100.0 + 22.0) / 22.0;
@@ -46,7 +44,7 @@ void AD_bat(void) {
 		printfLCD(1, 0, WHITE, "battery");
 		printfLCD(2, 3, WHITE, "%.2fV\n\r", batf);
 	}
-	printf("%.2f\n\r", batf);
+//	printf("%.2f\n\r", batf);
 	volatile int i;
 	i = 0;
 	while (i == 0) {
@@ -114,9 +112,9 @@ void getWallSensorValue(void) {
 			- g_offWallSensorValue.left;
 	g_nowWallSensorValue.right = g_onWallSensorValue.right
 			- g_offWallSensorValue.right;
-//
+////
 //	printf("%4d,%4d,%4d\n\r", g_nowWallSensorValue.left,
-//			g_nowWallSensorValue.center, g_nowWallSensorValue.right);
+//			g_nowWallSensorValue.center, g_nowWallSensorValue.right); //これあると動かないよ
 
 }
 

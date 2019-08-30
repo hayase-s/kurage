@@ -19,6 +19,11 @@ typedef struct{
 
 extern tarparameter g_targetTrans;
 
+
+
+uint16_t rightcalPWMCount(float wvel_r);
+uint16_t leftcalPWMCount(float wvel_l);
+
 #endif /* MOTOR_H_ */
 
 

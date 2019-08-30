@@ -54,6 +54,7 @@
 #include "AD.h"
 #include "wall.h"
 #include "turn.h"
+#include "Traacceleration.h"
 
 extern uint16_t g_ADCBuffer[4];
 extern int g_sensorLEDFlag;
@@ -154,22 +155,16 @@ int main(void) {
 	/* USER CODE BEGIN 3 */
 	g_sensorLEDFlag = 1;
 
-	Traacc();
-////
-//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, HIGH);
-//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
-//	HAL_Delay(3);
-//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
+////	g_x = 360;
+////	Traacc();
 //
-//	g_targetTrans.wvel_r = 180;
-//	g_targetTrans.wvel_l = 180;
-//	rightcalPWMCount(g_targetTrans.wvel_r);
-//	leftcalPWMCount(g_targetTrans.wvel_l);
-//	wait_ms(3000);
-//	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
-//	HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3);
+//	g_th = 90;
 //	turn();
+	hidarite();
 	while (1) {
+//		getWallSensorValue();
+//		printf("%4d,%4d,%4d\n\r", g_nowWallSensorValue.left,
+//				g_nowWallSensorValue.center, g_nowWallSensorValue.right);
 	}
 
 	/* USER CODE END 3 */

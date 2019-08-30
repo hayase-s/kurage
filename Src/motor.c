@@ -15,8 +15,8 @@ tarparameter g_targetTrans;
 uint16_t rightcalPWMCount(float wvel_r) {
 	uint16_t PWMCount;
 	if ((fabs(g_targetTrans.wvel_r) > 0.0)
-			&& (2707256.36 / fabs(g_targetTrans.wvel_r) < UINT16_MAX)) {
-		PWMCount = (uint16_t) (2707256.36 / fabs(g_targetTrans.wvel_r)) - 1;
+			&& (3807256.36 / fabs(g_targetTrans.wvel_r) < UINT16_MAX)) {
+		PWMCount = (uint16_t) (3807256.36 / fabs(g_targetTrans.wvel_r)) - 1;
 	} else {
 		PWMCount = UINT16_MAX - 1;
 	}
@@ -26,8 +26,8 @@ uint16_t rightcalPWMCount(float wvel_r) {
 uint16_t leftcalPWMCount(float wvel_l) {
 	uint16_t PWMCount;
 	if ((fabs(g_targetTrans.wvel_l) > 0.0)
-			&& (2707256.36 / fabs(g_targetTrans.wvel_l) < UINT16_MAX)) {
-		PWMCount = (uint16_t) (2707256.36 / fabs(g_targetTrans.wvel_l)) - 1;
+			&& (3807256.36 / fabs(g_targetTrans.wvel_l) < UINT16_MAX)) {
+		PWMCount = (uint16_t) (3807256.36 / fabs(g_targetTrans.wvel_l)) - 1;
 	} else {
 		PWMCount = UINT16_MAX - 1;
 	}

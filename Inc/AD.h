@@ -21,4 +21,7 @@ enum sen_change {
 	OFFVALUE, SIDEVALUE, FRONTVALUE, END
 };
 
+void getWallSensorValue(void);
+void AD_bat(void);
+
 #endif /* AD_H_ */
