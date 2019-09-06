@@ -58,7 +58,6 @@ void Traacc(void) {
 	while (g_targetTrans.dis < g_x) {
 		rightcalPWMCount(g_targetTrans.wvel_r);
 		leftcalPWMCount(g_targetTrans.wvel_l);
-//		printf("%f\n\r", g_targetTrans.dis);
 	}
 
 	HAL_TIM_Base_Stop_IT(&htim1);

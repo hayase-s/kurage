@@ -19,7 +19,11 @@ typedef struct{
 
 extern tarparameter g_targetTrans;
 
+void rightCWCCW(float wvel_r);
+void leftCWCCW(float wvel_l);
 
+
+void rightcalPara(tarparameter *para);
 
 uint16_t rightcalPWMCount(float wvel_r);
 uint16_t leftcalPWMCount(float wvel_l);

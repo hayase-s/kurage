@@ -21,6 +21,8 @@ typedef struct {
 	float old_val;
 } senpara;
 
+void KABE(void);
+
 extern senpara sen_r, sen_l;
 
 #endif /* WALL_H_ */

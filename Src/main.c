@@ -155,16 +155,16 @@ int main(void) {
 	/* USER CODE BEGIN 3 */
 	g_sensorLEDFlag = 1;
 
-////	g_x = 360;
-////	Traacc();
-//
+//	g_x = 540;
+//	Traacc();
 //	g_th = 90;
 //	turn();
-	hidarite();
+//	hidarite();
+
+
 	while (1) {
-//		getWallSensorValue();
-//		printf("%4d,%4d,%4d\n\r", g_nowWallSensorValue.left,
-//				g_nowWallSensorValue.center, g_nowWallSensorValue.right);
+		KABE();
+		HAL_Delay(200);
 	}
 
 	/* USER CODE END 3 */

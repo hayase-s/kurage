@@ -10,13 +10,17 @@
 #include "gpio.h"
 #include "motor.h"
 
+int d;
 tarparameter g_targetTrans;
 
 uint16_t rightcalPWMCount(float wvel_r) {
 	uint16_t PWMCount;
+	d = 52;
 	if ((fabs(g_targetTrans.wvel_r) > 0.0)
-			&& (3807256.36 / fabs(g_targetTrans.wvel_r) < UINT16_MAX)) {
-		PWMCount = (uint16_t) (3807256.36 / fabs(g_targetTrans.wvel_r)) - 1;
+			&& ((8000000 * 0.9 * (3.141592653 / 180) * (d / 2))
+					/ fabs(g_targetTrans.wvel_r) < UINT16_MAX)) {
+		PWMCount = (uint16_t) ((8000000 * 0.9 * (3.141592653 / 180) * (d / 2))
+				/ fabs(g_targetTrans.wvel_r)) - 1;
 	} else {
 		PWMCount = UINT16_MAX - 1;
 	}
@@ -26,8 +30,10 @@ uint16_t rightcalPWMCount(float wvel_r) {
 uint16_t leftcalPWMCount(float wvel_l) {
 	uint16_t PWMCount;
 	if ((fabs(g_targetTrans.wvel_l) > 0.0)
-			&& (3807256.36 / fabs(g_targetTrans.wvel_l) < UINT16_MAX)) {
-		PWMCount = (uint16_t) (3807256.36 / fabs(g_targetTrans.wvel_l)) - 1;
+			&& ((8000000 * 0.9 * (3.141592653 / 180) * (d / 2))
+					/ fabs(g_targetTrans.wvel_l) < UINT16_MAX)) {
+		PWMCount = (uint16_t) ((8000000 * 0.9 * (3.141592653 / 180) * (d / 2))
+				/ fabs(g_targetTrans.wvel_l)) - 1;
 	} else {
 		PWMCount = UINT16_MAX - 1;
 	}

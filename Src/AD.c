@@ -112,9 +112,6 @@ void getWallSensorValue(void) {
 			- g_offWallSensorValue.left;
 	g_nowWallSensorValue.right = g_onWallSensorValue.right
 			- g_offWallSensorValue.right;
-////
-//	printf("%4d,%4d,%4d\n\r", g_nowWallSensorValue.left,
-//			g_nowWallSensorValue.center, g_nowWallSensorValue.right); //これあると動かないよ
 
 }
 

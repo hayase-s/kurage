@@ -133,7 +133,6 @@ void TIM2_IRQHandler(void) {
 	HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3);
 	leftCount = leftcalPWMCount(g_targetTrans.wvel_l);
 	__HAL_TIM_SET_AUTORELOAD(&htim2, leftCount);
-
 	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, leftCount / 2);
 	leftCWCCW(g_targetTrans.wvel_l);
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
