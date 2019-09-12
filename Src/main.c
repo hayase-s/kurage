@@ -155,16 +155,16 @@ int main(void) {
 	/* USER CODE BEGIN 3 */
 	g_sensorLEDFlag = 1;
 
-//	g_x = 540;
-//	Traacc();
+	g_x = 360;
+	Traacc();
 //	g_th = 90;
 //	turn();
 //	hidarite();
 
 
 	while (1) {
-		KABE();
-		HAL_Delay(200);
+//		KABE();
+//		HAL_Delay(200);
 	}
 
 	/* USER CODE END 3 */

@@ -169,32 +169,32 @@ void TIM6_DAC1_IRQHandler(void) {
 		if (g_targetTrans.dis < x_acc) {
 			g_targetTrans.vel_r += a * 0.001;
 			g_targetTrans.vel_l += a * 0.001;
-			if (control < 0) {
+			if (control < 0) { //右に寄ってる時
 				g_targetTrans.wvel_r = g_targetTrans.vel_r + fabsf(control);
-				g_targetTrans.wvel_l = g_targetTrans.vel_l;
-			} else {
-				g_targetTrans.wvel_r = g_targetTrans.vel_r;
-				g_targetTrans.wvel_l = g_targetTrans.vel_l + control;
+				g_targetTrans.wvel_l = g_targetTrans.vel_l - fabsf(control);
+			} else { //左に寄ってる時
+				g_targetTrans.wvel_r = g_targetTrans.vel_r - fabsf(control);
+				g_targetTrans.wvel_l = g_targetTrans.vel_l + fabsf(control);
 			}
 		} else if (g_targetTrans.dis < (g_x - x_dec)) {
 			g_targetTrans.vel_r += 0 * 0.001;
 			g_targetTrans.vel_l += 0 * 0.001;
-			if (control < 0) {
+			if (control < 0) { //右に寄ってる時
 				g_targetTrans.wvel_r = g_targetTrans.vel_r + fabsf(control);
-				g_targetTrans.wvel_l = g_targetTrans.vel_l;
-			} else {
-				g_targetTrans.wvel_r = g_targetTrans.vel_r;
-				g_targetTrans.wvel_l = g_targetTrans.vel_l + control;
+				g_targetTrans.wvel_l = g_targetTrans.vel_l - fabsf(control);
+			} else { //左に寄ってる時
+				g_targetTrans.wvel_r = g_targetTrans.vel_r - fabsf(control);
+				g_targetTrans.wvel_l = g_targetTrans.vel_l + fabsf(control);
 			}
 		} else {
 			g_targetTrans.vel_r -= a * 0.001;
 			g_targetTrans.vel_l -= a * 0.001;
-			if (control < 0) {
+			if (control < 0) { //右に寄ってる時
 				g_targetTrans.wvel_r = g_targetTrans.vel_r + fabsf(control);
-				g_targetTrans.wvel_l = g_targetTrans.vel_l;
-			} else {
-				g_targetTrans.wvel_r = g_targetTrans.vel_r;
-				g_targetTrans.wvel_l = g_targetTrans.vel_l + control;
+				g_targetTrans.wvel_l = g_targetTrans.vel_l - fabsf(control);
+			} else { //左に寄ってる時
+				g_targetTrans.wvel_r = g_targetTrans.vel_r - fabsf(control);
+				g_targetTrans.wvel_l = g_targetTrans.vel_l + fabsf(control);
 			}
 		}
 	}

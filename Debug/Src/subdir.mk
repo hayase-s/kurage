@@ -14,6 +14,7 @@ C_SRCS += \
 ../Src/gpio.c \
 ../Src/hidarite.c \
 ../Src/main.c \
+../Src/map.c \
 ../Src/mode.c \
 ../Src/modeselect.c \
 ../Src/motor.c \
@@ -39,6 +40,7 @@ OBJS += \
 ./Src/gpio.o \
 ./Src/hidarite.o \
 ./Src/main.o \
+./Src/map.o \
 ./Src/mode.o \
 ./Src/modeselect.o \
 ./Src/motor.o \
@@ -64,6 +66,7 @@ C_DEPS += \
 ./Src/gpio.d \
 ./Src/hidarite.d \
 ./Src/main.d \
+./Src/map.d \
 ./Src/mode.d \
 ./Src/modeselect.d \
 ./Src/motor.d \

@@ -28,6 +28,7 @@
 "Src/gpio.o"
 "Src/hidarite.o"
 "Src/main.o"
+"Src/map.o"
 "Src/mode.o"
 "Src/modeselect.o"
 "Src/motor.o"
