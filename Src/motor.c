@@ -59,11 +59,11 @@ void leftCWCCW(float wvel_l) {
 const float DT = 0.001;
 
 void rightcalPara(tarparameter *para) {
-	para->dis += para->vel_r * DT + para->acc * DT * DT / 2.0;
+	para->dis += para->vel_r * DT;
 } //SEKIBUNKANSUU_MIGI
 
 void leftcalPara(tarparameter *para) {
-	para->dis += para->vel_l * DT + para->acc * DT * DT / 2.0;
+	para->dis += para->vel_l * DT;
 } //SEKIBUNKANSUU_HIDARI
 
 void motor_enable() {
