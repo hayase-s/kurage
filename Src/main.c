@@ -157,12 +157,12 @@ int main(void)
   /* USER CODE BEGIN 3 */
 	g_sensorLEDFlag = 1;
 
-	g_x = 720;
-	Traacc();
-//	g_th = 90;
-//	turn();
-//	hidarite();
+//	g_x = 180;
+//	Traacc();
 
+//	g_th = -90;
+//	turn();
+	hidarite();
 
 	while (1) {
 //		KABE();

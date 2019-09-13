@@ -210,7 +210,7 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* tim_pwmHandle)
     __HAL_RCC_TIM1_CLK_ENABLE();
 
     /* TIM1 interrupt Init */
-    HAL_NVIC_SetPriority(TIM1_UP_TIM16_IRQn, 2, 0);
+    HAL_NVIC_SetPriority(TIM1_UP_TIM16_IRQn, 1, 0);
     HAL_NVIC_EnableIRQ(TIM1_UP_TIM16_IRQn);
     HAL_NVIC_SetPriority(TIM1_CC_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(TIM1_CC_IRQn);
@@ -227,7 +227,7 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* tim_pwmHandle)
     __HAL_RCC_TIM2_CLK_ENABLE();
 
     /* TIM2 interrupt Init */
-    HAL_NVIC_SetPriority(TIM2_IRQn, 1, 0);
+    HAL_NVIC_SetPriority(TIM2_IRQn, 2, 0);
     HAL_NVIC_EnableIRQ(TIM2_IRQn);
   /* USER CODE BEGIN TIM2_MspInit 1 */
 
