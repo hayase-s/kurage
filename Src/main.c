@@ -55,6 +55,7 @@
 #include "AD.h"
 #include "wall.h"
 #include "turn.h"
+#include "hidarite.h"
 #include "Traacceleration.h"
 
 extern uint16_t g_ADCBuffer[4];
@@ -162,6 +163,7 @@ int main(void)
 
 //	g_th = -90;
 //	turn();
+//	getSensorvalue();
 	hidarite();
 
 	while (1) {

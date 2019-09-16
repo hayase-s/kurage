@@ -31,7 +31,7 @@ void Traacc(void) {
 	HAL_TIM_Base_Stop_IT(&htim2);
 	HAL_TIM_PWM_Stop_IT(&htim2, TIM_CHANNEL_3);
 
-	a = 2000.0;
+	a = 1400.0;
 	v_start = 200.0;
 	v_max = 1500.0;
 	v_end = 200.0;

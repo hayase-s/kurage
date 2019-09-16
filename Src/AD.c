@@ -115,3 +115,11 @@ void getWallSensorValue(void) {
 
 }
 
+void getSensorvalue(void) {
+	while (1) {
+		printf("L=%d,C=%d,R=%d\n\r", g_nowWallSensorValue.left,
+				g_nowWallSensorValue.center, g_nowWallSensorValue.right);
+		HAL_Delay(200);
+	}
+}
+

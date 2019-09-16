@@ -10,6 +10,7 @@
 #include "motor.h"
 #include "myassign.h"
 #include "wall.h"
+#include "map.h"
 #include <math.h>
 
 float v_R;
@@ -35,7 +36,7 @@ void turn(void) {
 
 	v = 0;
 	ome = (270.00 / 180.00) * 3.14159265;
-	r = 49.0;
+	r = 47.0;
 	th_rad = (fabsf(g_th) / 180.00) * 3.14159265;
 
 	if (g_th > 0) {

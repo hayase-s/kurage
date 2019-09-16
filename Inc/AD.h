@@ -23,5 +23,6 @@ enum sen_change {
 
 void getWallSensorValue(void);
 void AD_bat(void);
+void getSensorvalue(void);
 
 #endif /* AD_H_ */
