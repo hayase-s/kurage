@@ -67,9 +67,3 @@ void leftcalPara(tarparameter *para) {
 	para->dis += para->vel_l * DT;
 } //SEKIBUNKANSUU_HIDARI
 
-void motor_enable() {
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, HIGH);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
-	HAL_Delay(3);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
-}

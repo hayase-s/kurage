@@ -17,7 +17,7 @@ senpara sen_l;
 senpara sen_r;
 
 void KABE(void) {
-	Kp = 0.6;
+	Kp = 0.5;
 	sen_l.thredhold = 41;
 	sen_r.thredhold = 77; //閾値
 	sen_l.ref = 82;
