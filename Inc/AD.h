@@ -7,11 +7,12 @@
 
 #ifndef AD_H_
 #define AD_H_
+#include <stdint.h>
 
 typedef struct {
-	int center;
-	int right;
-	int left;
+	uint16_t center;
+	uint16_t right;
+	uint16_t left;
 } wallsenpara;
 
 extern wallsenpara g_offWallSensorValue, g_onWallSensorValue,

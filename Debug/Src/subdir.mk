@@ -15,7 +15,6 @@ C_SRCS += \
 ../Src/hidarite.c \
 ../Src/main.c \
 ../Src/map.c \
-../Src/mode.c \
 ../Src/modeselect.c \
 ../Src/motor.c \
 ../Src/myassign.c \
@@ -41,7 +40,6 @@ OBJS += \
 ./Src/hidarite.o \
 ./Src/main.o \
 ./Src/map.o \
-./Src/mode.o \
 ./Src/modeselect.o \
 ./Src/motor.o \
 ./Src/myassign.o \
@@ -67,7 +65,6 @@ C_DEPS += \
 ./Src/hidarite.d \
 ./Src/main.d \
 ./Src/map.d \
-./Src/mode.d \
 ./Src/modeselect.d \
 ./Src/motor.d \
 ./Src/myassign.d \
