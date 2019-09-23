@@ -21,11 +21,6 @@ float x_dec;
 int Tra;
 
 void Traacc(void) {
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, HIGH);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
-	HAL_Delay(3);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
-
 	HAL_TIM_Base_Stop_IT(&htim1);
 	HAL_TIM_PWM_Stop_IT(&htim1, TIM_CHANNEL_1);
 	HAL_TIM_Base_Stop_IT(&htim2);

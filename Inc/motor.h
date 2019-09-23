@@ -29,6 +29,8 @@ void rightcalPara(tarparameter *para);
 uint16_t rightcalPWMCount(float wvel_r);
 uint16_t leftcalPWMCount(float wvel_l);
 
+void motorEnable(uint8_t onoff);
+
 #endif /* MOTOR_H_ */
 
 

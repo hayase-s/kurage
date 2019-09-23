@@ -6,9 +6,9 @@
 C_SRCS += \
 ../Src/AD.c \
 ../Src/Traacceleration.c \
+../Src/adachi.c \
 ../Src/adc.c \
 ../Src/aqm1248a.c \
-../Src/buzzer.c \
 ../Src/dma.c \
 ../Src/font.c \
 ../Src/gpio.c \
@@ -31,9 +31,9 @@ C_SRCS += \
 OBJS += \
 ./Src/AD.o \
 ./Src/Traacceleration.o \
+./Src/adachi.o \
 ./Src/adc.o \
 ./Src/aqm1248a.o \
-./Src/buzzer.o \
 ./Src/dma.o \
 ./Src/font.o \
 ./Src/gpio.o \
@@ -56,9 +56,9 @@ OBJS += \
 C_DEPS += \
 ./Src/AD.d \
 ./Src/Traacceleration.d \
+./Src/adachi.d \
 ./Src/adc.d \
 ./Src/aqm1248a.d \
-./Src/buzzer.d \
 ./Src/dma.d \
 ./Src/font.d \
 ./Src/gpio.d \

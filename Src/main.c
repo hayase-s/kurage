@@ -147,7 +147,7 @@ int main(void) {
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
 	HAL_ADC_Start_DMA(&hadc1, (uint32_t *) g_ADCBuffer, 4);
 	HAL_Delay(10);
-//	AD_bat();
+	AD_bat();
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -156,15 +156,10 @@ int main(void) {
 
 	/* USER CODE BEGIN 3 */
 	g_sensorLEDFlag = 1;
+	modeSelect();
 
-	loadMapFlash(0x0800f800);
-	printWall();
 
-//	initWall();
-//	saveMapFlash(0x0800f800);
 
-	while (1) {
-	}
 
 	/* USER CODE END 3 */
 

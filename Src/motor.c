@@ -13,7 +13,6 @@
 int d;
 tarparameter g_targetTrans;
 
-
 uint16_t rightcalPWMCount(float wvel_r) {
 	uint16_t PWMCount;
 	d = 52;
@@ -67,3 +66,13 @@ void leftcalPara(tarparameter *para) {
 	para->dis += para->vel_l * DT;
 } //SEKIBUNKANSUU_HIDARI
 
+void motorEnable(uint8_t onoff) {
+	if (onoff == 1) {
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, HIGH);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, SET);
+		HAL_Delay(3);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, RESET);
+	} else {
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, LOW);
+	}
+}
