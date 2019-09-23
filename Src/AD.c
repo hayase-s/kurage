@@ -44,9 +44,7 @@ void AD_bat(void) {
 		printfLCD(1, 0, WHITE, "battery");
 		printfLCD(2, 3, WHITE, "%.2fV\n\r", batf);
 	}
-//	printf("%.2f\n\r", batf);
-	volatile int i;
-	i = 0;
+	volatile int i = 0;
 	while (i == 0) {
 		if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == HIGH) {
 		} else {

@@ -1,4 +1,9 @@
 Src/modeselect.o: ../Src/modeselect.c \
+ /Users/kanako/git/kurage/Inc/modeselect.h \
+ /Users/kanako/git/kurage/Inc/aqm1248a.h \
+ /Users/kanako/git/kurage/Inc/myassign.h \
+ /Users/kanako/git/kurage/Inc/myassign.h \
+ /Users/kanako/git/kurage/Inc/gpio.h \
  /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h \
  /Users/kanako/git/kurage/Inc/stm32f3xx_hal_conf.h \
  /Users/kanako/git/kurage/Inc/main.h \
@@ -32,11 +37,17 @@ Src/modeselect.o: ../Src/modeselect.c \
  /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
- /Users/kanako/git/kurage/Inc/spi.h /Users/kanako/git/kurage/Inc/gpio.h \
- /Users/kanako/git/kurage/Inc/myassign.h \
- /Users/kanako/git/kurage/Inc/aqm1248a.h \
- /Users/kanako/git/kurage/Inc/myassign.h \
- /Users/kanako/git/kurage/Inc/font.h
+ /Users/kanako/git/kurage/Inc/hidarite.h
+
+/Users/kanako/git/kurage/Inc/modeselect.h:
+
+/Users/kanako/git/kurage/Inc/aqm1248a.h:
+
+/Users/kanako/git/kurage/Inc/myassign.h:
+
+/Users/kanako/git/kurage/Inc/myassign.h:
+
+/Users/kanako/git/kurage/Inc/gpio.h:
 
 /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:
 
@@ -104,14 +115,4 @@ Src/modeselect.o: ../Src/modeselect.c \
 
 /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
 
-/Users/kanako/git/kurage/Inc/spi.h:
-
-/Users/kanako/git/kurage/Inc/gpio.h:
-
-/Users/kanako/git/kurage/Inc/myassign.h:
-
-/Users/kanako/git/kurage/Inc/aqm1248a.h:
-
-/Users/kanako/git/kurage/Inc/myassign.h:
-
-/Users/kanako/git/kurage/Inc/font.h:
+/Users/kanako/git/kurage/Inc/hidarite.h:

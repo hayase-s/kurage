@@ -43,7 +43,8 @@ Src/main.o: ../Src/main.c /Users/kanako/git/kurage/Inc/main.h \
  /Users/kanako/git/kurage/Inc/AD.h /Users/kanako/git/kurage/Inc/turn.h \
  /Users/kanako/git/kurage/Inc/hidarite.h \
  /Users/kanako/git/kurage/Inc/Traacceleration.h \
- /Users/kanako/git/kurage/Inc/map.h
+ /Users/kanako/git/kurage/Inc/map.h \
+ /Users/kanako/git/kurage/Inc/modeselect.h
 
 /Users/kanako/git/kurage/Inc/main.h:
 
@@ -148,3 +149,5 @@ Src/main.o: ../Src/main.c /Users/kanako/git/kurage/Inc/main.h \
 /Users/kanako/git/kurage/Inc/Traacceleration.h:
 
 /Users/kanako/git/kurage/Inc/map.h:
+
+/Users/kanako/git/kurage/Inc/modeselect.h:

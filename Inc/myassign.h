@@ -8,6 +8,8 @@
 #ifndef MYASSIGN_H_
 #define MYASSIGN_H_
 
+#include <stdint.h>
+
 enum ONOFF {
 	HIGH = 1, LOW = 0
 };

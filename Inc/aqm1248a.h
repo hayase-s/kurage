@@ -9,6 +9,7 @@
 #define AQM1248A_H_
 
 #include "myassign.h"
+#include <stdint.h>
 
 enum AQM1248A { //Register Select State
 	RS_OFF = LOW, RS_ON = HIGH

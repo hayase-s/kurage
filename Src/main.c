@@ -57,6 +57,7 @@
 #include "hidarite.h"
 #include "Traacceleration.h"
 #include "map.h"
+#include "modeselect.h"
 extern uint16_t g_ADCBuffer[4];
 extern int g_sensorLEDFlag;
 
@@ -156,20 +157,10 @@ int main(void) {
 	/* USER CODE BEGIN 3 */
 	g_sensorLEDFlag = 1;
 
-
-//	g_WallThreshold.left = 65;
-//	g_WallThreshold.center = 1;
-//	g_WallThreshold.right = 150;
-//	g_x = 180;
-//	Traacc();
-//	g_th = -90;
-//	turn();
-//	getSensorvalue();
-
-	initWall();
-//	hidarite();
+	loadMapFlash(0x0800f800);
 	printWall();
 
+//	initWall();
 //	saveMapFlash(0x0800f800);
 
 	while (1) {
