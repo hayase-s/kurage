@@ -37,7 +37,7 @@ Src/modeselect.o: ../Src/modeselect.c \
  /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  /Users/kanako/git/kurage/Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
  /Users/kanako/git/kurage/Inc/hidarite.h \
- /Users/kanako/git/kurage/Inc/map.h
+ /Users/kanako/git/kurage/Inc/map.h /Users/kanako/git/kurage/Inc/AD.h
 
 /Users/kanako/git/kurage/Inc/modeselect.h:
 
@@ -116,3 +116,5 @@ Src/modeselect.o: ../Src/modeselect.c \
 /Users/kanako/git/kurage/Inc/hidarite.h:
 
 /Users/kanako/git/kurage/Inc/map.h:
+
+/Users/kanako/git/kurage/Inc/AD.h:

@@ -58,8 +58,8 @@
 #include "Traacceleration.h"
 #include "map.h"
 #include "modeselect.h"
+#include "adachi.h"
 extern uint16_t g_ADCBuffer[4];
-extern int g_sensorLEDFlag;
 
 //extern tarparameter g_targetTrans;
 
@@ -155,11 +155,11 @@ int main(void) {
 	/* USER CODE END WHILE */
 
 	/* USER CODE BEGIN 3 */
-	g_sensorLEDFlag = 1;
-	modeSelect();
-
-
-
+	g_location.x_goal = 1;
+	g_location.y_goal = 1;
+	adachi();
+	printWall();
+//	modeSelect();
 
 	/* USER CODE END 3 */
 

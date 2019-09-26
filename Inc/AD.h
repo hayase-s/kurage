@@ -17,6 +17,7 @@ typedef struct {
 
 extern wallsenpara g_offWallSensorValue, g_onWallSensorValue,
 		g_nowWallSensorValue;
+extern uint8_t g_sensorLEDFlag;
 
 enum sen_change {
 	OFFVALUE, SIDEVALUE, FRONTVALUE, END
@@ -25,5 +26,7 @@ enum sen_change {
 void getWallSensorValue(void);
 void AD_bat(void);
 void getSensorvalue(void);
+
+
 
 #endif /* AD_H_ */

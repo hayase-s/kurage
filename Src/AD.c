@@ -12,7 +12,7 @@ wallsenpara g_offWallSensorValue;
 wallsenpara g_onWallSensorValue;
 wallsenpara g_nowWallSensorValue;
 int g_ADCcount;
-int g_sensorLEDFlag;
+uint8_t g_sensorLEDFlag;
 float batf;
 
 uint16_t g_ADCBuffer[4];
